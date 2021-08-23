@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=submit] {
+  background-color: #2aff00;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  float: center;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.col-50 {
+  float: left;
+  width: 49%;
+  margin:3px;
+}
+
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  margin:3px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 626px) {
+	.col-50, input[type=submit] {
+    width: 100%;
+    margin-top: 6;
+  }
+}
+</style>
+</head>
+<body>
+<div  class="container">
+  <form action="https://sheetdb.io/api/v1/ebz8nse64j31a" method="POST" id="sheetdb-form" href="www.google.com.br">
+    
+    <div id=”nid” class="row">
+      <div id=”nome_do_id” class="col-50">
+        <input type="text" id="nome" name="data[nome]" placeholder="Nome">
+      </div>
+      
+      <div id=”nid” class="col-50">
+      	<input type="tel" id="telefone" name="data[telefone]" placeholder="DDD + WhatsApp">
+      </div>
+    </div>
+      
+    <div id=”nid” class="row">
+      <div id=”nid”>
+      	<input type="email" id="email" name="data[email]" placeholder="Digite seu melhor e-mail">
+      </div>
+    </div>
+    
+    <div id=”nid” class="row">
+      <input type="submit" value="QUERO PARTICIPAR GRATUITAMENTE">
+    </div>
+  </form>
+</div>
+
+	<script>
+
+var form = document.getElementById('sheetdb-form');
+
+form.addEventListener("submit", e => {
+
+e.preventDefault();
+fetch(form.action, {
+
+method: "POST",
+
+body: new FormData(document.getElementById("sheetdb-form")),
+ }).then(
+
+response => response.json()
+
+).then((html) => {
+ // you can put any JS code here
+window.location.href = 'www.google.com.br';
+
+});
+
+});
+
+</script>
+
+
+</body>
+</html>
